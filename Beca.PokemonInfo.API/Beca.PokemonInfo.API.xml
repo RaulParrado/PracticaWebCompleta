@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Beca.PokemonInfo.API</name>
+    </assembly>
+    <members>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.GetAttacks(System.Int32)">
+            <summary>
+            Get all attacks from a pokemon by pokemonId
+            </summary>
+            <param name="pokemonId">The pokemon we want to see the attacks of</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested attacks</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.GetAttack(System.Int32,System.Int32)">
+            <summary>
+            Get one attack from a pokemon by pokemonId and attack id
+            </summary>
+            <param name="pokemonId">The pokemon we want to see the attacks of</param>
+            <param name="attackId">The attack id we want</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested pokemon attack</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.CreateAttack(System.Int32,Beca.PokemonInfo.API.Models.AttackForCreateOrUpdateDto)">
+            <summary>
+            Create an attack and attach it to a pokemon
+            </summary>
+            <param name="attack">The values to create the attack</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested pokemons</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.UpdateAttack(System.Int32,System.Int32,Beca.PokemonInfo.API.Models.AttackForCreateOrUpdateDto)">
+            <summary>
+            Update an attack by ids
+            </summary>
+            <param name="pokemonId">The pokemon we want to see the attacks of</param>
+            <param name="attackId">The attack id we want</param>
+            <param name="attack">The values to update the attack</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested pokemons</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.PartiallyUpdateAttack(System.Int32,System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Beca.PokemonInfo.API.Models.AttackForCreateOrUpdateDto})">
+            <summary>
+            Partially updates an attack by ids
+            </summary>
+            <param name="pokemonId">The pokemon we want to see the attacks of</param>
+            <param name="attackId">The attack id we want</param>
+            <param name="patchDocument">The values to update the attack</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested pokemons</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.AttacksController.DeleteAttack(System.Int32,System.Int32)">
+            <summary>
+            Delete an attack by attack id
+            </summary>
+            <param name="attackId">The attack id we want to delete</param>
+            <param name="pokemonId">The pokemon id we want to delete an attack from</param>
+            <returns>An ActionResult</returns>
+            <response code="204">Returns no content</response>
+            <response code="404">Returns notFound if the attack id does not exist</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.PokemonsController.GetPokemons(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all pokemons and paginate the solution, with filtering
+            </summary>
+            <param name="name">Filter by pokemon name</param>
+            <param name="searchQuery">Filter by search query</param>
+            /// <param name="pageNumber">Page number if results are > page size</param>
+            /// <param name="pageSize">The quantity of items on a page</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested pokemons</response>
+        </member>
+        <member name="M:Beca.PokemonInfo.API.Controllers.PokemonsController.GetPokemon(System.Int32,System.Boolean)">
+            <summary>
+            Get a pokemon by id
+            </summary>
+            <param name="id">The id of the pokemon to get</param>
+            <param name="includeAttacks">Whether or not to include the attacks</param>
+            <returns>An IActionResult</returns>
+            <response code="200">Returns the requested pokemon</response>
+        </member>
+    </members>
+</doc>
