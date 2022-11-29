@@ -1,14 +1,13 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonsService } from './../../shared/pokemons.service';
-import { Pokemon, Attack, PokemonWithAttacks, newAttack } from './../../shared/Interfaces';
+import { Pokemon, newAttack } from './../../shared/Interfaces';
 import { NgForm } from '@angular/forms';
 
 
 @Component({
   selector: 'app-attacks',
   templateUrl: './editAttack.component.html',
-//  styleUrls: ['./editAttack.component.css']
 })
 
 export class EditAttackComponent implements OnInit {

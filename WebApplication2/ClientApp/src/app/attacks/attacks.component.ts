@@ -1,7 +1,7 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonsService } from './../shared/pokemons.service';
-import { Pokemon, Attack, PokemonWithAttacks, newAttack } from './../shared/Interfaces';
+import { Attack, PokemonWithAttacks } from './../shared/Interfaces';
 
 @Component({
   selector: 'app-attacks',
