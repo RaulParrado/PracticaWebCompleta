@@ -1,0 +1,17 @@
+<h1 id="tableLabel">Pokemons</h1>
+
+<p>En esta vista podemos ver los pokemons almacenados en la base de datos</p>
+
+<p *ngIf="!pokemons"><em>Cargando...</em></p>
+<div class="pokemonCards">
+  <div class="container" style="margin:auto;" *ngFor="let pokemon of pokemons">
+    <div class="card" style="width: 18rem; margin:auto; margin-bottom:6rem" >
+      <img class="card-img-top pokemonCardImg" src="../../assets/images/pokemons/{{ pokemon.id }}.jpg" onerror="this.src='../../assets/images/pokemons/default.jpg'" alt="{{ pokemon.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemon.id }} . {{ pokemon.name }}</h5>
+        <p class="card-text" style="color:black">{{ pokemon.description }}</p>
+        <a [routerLink]="['/pokemons',pokemon.id]" href="#" class="btn btn-primary">Detalles</a>
+      </div>
+    </div>
+  </div>
+</div>

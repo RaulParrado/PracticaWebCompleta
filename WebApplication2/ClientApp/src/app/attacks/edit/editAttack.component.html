@@ -1,0 +1,40 @@
+<h2 *ngIf="!attackId"> Nuevo ataque para {{pokemon?.name}} </h2>
+<h2 *ngIf="attackId"> Editar el ataque {{attackId}} de {{pokemon?.name}}</h2>
+<hr />
+<div class="card card-body row">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" class="form-control" [(ngModel)]="newAttack.name" required maxlength="50" #formName="ngModel" [class.field-error]="form.submitted && formName.invalid" />
+              <div class="alert alert-dark form-control" [hidden]="formName.valid || !form.submitted">
+                <p *ngIf="formName.errors?.['maxlength']">El nombre del ataque no puede superar los 50 caracteres</p>
+                <p *ngIf="formName.errors?.['required']">El campo no puede estar vacío</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <textarea id="description" name="description" class="form-control" [(ngModel)]="newAttack.description" maxlength="300" #formDescription="ngModel"></textarea>
+              <div class="alert alert-dark form-control" [hidden]="formDescription.valid">
+                <p  *ngIf="formDescription.errors?.['maxlength']">La descripción del ataque no puede superar los 300 caracteres</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-button">
+            <button type='submit' class="btn btn-primary" *ngIf="!attackId">Añadir</button>
+            <button type='submit' class="btn btn-primary" *ngIf="attackId">Guardar</button>
+            <button type='button' class="btn btn-danger" (click)="onCancel()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

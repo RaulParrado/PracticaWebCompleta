@@ -1,0 +1,33 @@
+<h1 id="tableLabel">Detalles del pokemon</h1>
+
+<p>Aquí puedes ver y modificar los ataques de tus pokemon .</p>
+<p *ngIf="!pokemon"><em>Loading...</em></p>
+<div class="card">
+  <div class="row ">
+
+    <div class="col-md-7 px-3 " style="margin:auto; margin-top: 2rem;">
+      <div class="card-block px-6">
+        <h4 class="card-title">
+          {{pokemon?.id}} - {{pokemon?.name}}
+        </h4><br>
+        <h5>Descripción</h5>
+        <p class="card-text" style="color:black">
+          {{pokemon?.description}}
+        </p><br /><h5>Ataques</h5>
+        <ul class="list-group" *ngFor="let attack of attacks">
+          <li class="list-group-item">{{attack.name}}</li>
+          <li class="list-group-item"> {{attack.description}}</li>
+          <li class="list-group-item">
+            <a class="btn btn-primary" (click)="editAttack(attack)">Editar</a>  &nbsp;
+            <a class="btn btn-danger" (click)="deleteAttack(attack)">Borrar</a>
+          </li>
+          <br>
+        </ul>
+      </div>
+      <a (click)="newAttack()" style="margin-bottom:2rem" class="btn btn-primary">Nuevo ataque</a>
+    </div>
+    <div class="card-img pokemonCardImg">
+      <img class="d-block" src="../../assets/images/pokemons/{{pokemon?.id}}.jpg" alt="{{pokemon?.name}}">
+    </div>
+  </div>
+</div>

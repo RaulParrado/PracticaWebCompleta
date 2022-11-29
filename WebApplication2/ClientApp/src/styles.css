@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+h1 {
+  color: aliceblue;
+}
+a {
+  color: #fff7c8;
+}
+p {
+  color: aliceblue;
+  font-weight: bold;
+  font-size:20px;
+}
+code {
+  color: #e01a76;
+}
+
+ul {
+  list-style-type: bengali;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+body {
+  background-image: url('./assets/images/pikachu.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.pokemonCards {
+  display: flex;
+}
+.pokemonCardImg {
+  width: auto;
+  height: 10rem;
+  margin: auto;
+  margin-top: 2rem;
+}
